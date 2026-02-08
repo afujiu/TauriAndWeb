@@ -7,5 +7,6 @@ export const bootMode = 'tauri'
  */
 export async function bridge<T>(command: string, args: any): Promise<T> {
   const { invoke } = await import('@tauri-apps/api/core')
+	console.log('unshare/tauriadsf/')
   return await invoke<T>(command, args)
 }

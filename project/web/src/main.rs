@@ -1,14 +1,11 @@
 use actix_web::{web, App, HttpServer, Responder, HttpResponse};
 use actix_files::Files;
-use serde::Deserialize;
 
 #[derive(serde::Deserialize)]
 struct MyPostData {
     name: String,
     age: u32,
 }
-
-
 
 async fn post_handler(item: web::Json<MyPostData>) -> impl Responder {
     let response = format!("Received: name={}, age={}", item.name, item.age);

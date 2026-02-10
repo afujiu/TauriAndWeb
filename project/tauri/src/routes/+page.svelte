@@ -11,7 +11,7 @@
 </script>
 
 <main class="container">
-  <h1>Welcome TAW</h1>
+  <h1>共有ソース</h1>
   <form class="row" onsubmit={greetHandler}>
     <input id="greet-input" placeholder="Enter a name..." bind:value={name} />
     <button type="submit">Greet</button>

@@ -11,11 +11,8 @@ else
 fi
 
 # Rustファイル同期
-# rsync -av --delete "$SRC_DIR/rust/" "$TAURI_DIR/src-tauri/"
-
-# bridge.ts同期
+rsync -av --delete "$SRC_DIR/rust/api/" "$TAURI_DIR/src-tauri/src/"
 rsync -av --delete "$ROOT_DIR/src/unshare/tauri/bridge.ts" "$ROOT_DIR/project/tauri/src/lib/bridge.ts"
-
 
 # package.json devDependencies同期
 # jq '.devDependencies' "$SRC_DIR/svelte/package.json" > /tmp/dev_deps.json

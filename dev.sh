@@ -26,7 +26,7 @@ echo "src検知"
 
 # srcの変更を検知
 fswatch -o "$SRC_DIR" | while read; do
-	echo "検知"
+	echo "更新検知"
 	"$ROOT_DIR/shell/rsyncTauri.sh" "$ROOT_DIR"
 	"$ROOT_DIR/shell/rsyncWeb.sh" "$ROOT_DIR"
 done

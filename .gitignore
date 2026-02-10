@@ -3,8 +3,8 @@ node_modules
 project/web/target/*
 project/web/front/*
 project/svelte
-.DS_Store
 node_modules
+project/tauri/src-tauri/target
 
 # Output
 .output
@@ -27,3 +27,5 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+.DS_Store
+.DS_Store

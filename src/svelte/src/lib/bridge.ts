@@ -9,16 +9,16 @@ const base = (typeof import.meta !== 'undefined' && (import.meta as any).env && 
  * @returns コマンドの実行結果
  */
 export async function bridge<T>(command: string, args: any): Promise<T> {
-    // Web 環境の場合は API サーバーを呼び出す
-    const url = `${base}/api/${command}`
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(args),
-    })
-    const data = await response.json()
-    // result フィールドがあればそれを返し、なければ message を返す（互換性のため）
-    return (data.result !== undefined ? data.result : data.message) as T
+	// Web 環境の場合は API サーバーを呼び出す
+	const url = `${base}/${command}`
+	const response = await fetch(url, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(args),
+	})
+	const data = await response.json()
+	// result フィールドがあればそれを返し、なければ message を返す（互換性のため）
+	return (data.result !== undefined ? data.result : data.message) as T
 }

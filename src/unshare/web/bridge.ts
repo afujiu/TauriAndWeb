@@ -10,7 +10,8 @@ const base = (typeof import.meta !== 'undefined' && (import.meta as any).env && 
  */
 export async function bridge<T>(command: string, args: any): Promise<T> {
     // Web 環境の場合は API サーバーを呼び出す
-    const url = `${base}/api/${command}`
+    alert('est')
+		const url = `${base}/${command}`
     const response = await fetch(url, {
       method: "POST",
       headers: {

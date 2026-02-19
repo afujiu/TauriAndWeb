@@ -1,12 +1,15 @@
-.DS_Store
-node_modules
-project/web/target/*
-project/web/front/*
-project/svelte
-node_modules
-project/tauri/src-tauri/target
+# --- project/tauri ---
+project/tauri/node_modules
+project/tauri/.svelte-kit
+project/tauri/build
+vite.config.ts.timestamp-*
 
-# Output
+# --- 共通 ---
+.DS_Store
+Thumbs.db
+node_modules
+
+# --- svelte/web/tauri 共通 ---
 .output
 .vercel
 .netlify
@@ -14,16 +17,29 @@ project/tauri/src-tauri/target
 /.svelte-kit
 /build
 
-# OS
-.DS_Store
-Thumbs.db
+# --- project/web ---
+project/web/target/*
+project/web/front/*
 
-# Env
+# --- project/svelte ---
+project/svelte
+
+# --- project/tauri ---
+project/tauri/src-tauri/target
+
+# --- project/tauri/src-tauri ---
+project/tauri/src-tauri/gen/schemas
+project/tauri/src-tauri/target/
+
+# --- 環境変数 ---
 .env
 .env.*
 !.env.example
 !.env.test
 
-# Vite
+# --- Vite ---
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# --sr--
+src/svelte/.svelte-kit/

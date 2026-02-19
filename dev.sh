@@ -9,6 +9,8 @@ echo "1. tauri同期"
 "$ROOT_DIR/shell/rsyncTauri.sh" "$ROOT_DIR"
 
 echo "3.tauri起動"
+(cd "$TAURI_DIR" && npx tauri icon ./icon.png &)
+(cd "$TAURI_DIR" && rm -rf src-tauri/target &)
 (cd "$TAURI_DIR" && npm run tauri dev &)
 TAURI_PID=$!
 

@@ -12,4 +12,6 @@ echo "svelte ビルド"
 (cd "$SVELTE_DIR" && npm run build)
 echo "WEB起動"
 (cd "$WEB_DIR" && cargo run &)
+(cd "$WEB_DIR" && cargo build --release --target x86_64-unknown-linux-gnu &)
+
 echo "起動済み"

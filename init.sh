@@ -1,6 +1,6 @@
 # 変数
 ROOT_DIR="$(cd "$(dirname "$0")"; pwd)"
-PROJECT_NAME="taw"
+PROJECT_NAME="rename"
 PROJECT_VERSION="0.0.1"
 DESCRIPTION="description"
 chmod +x "$ROOT_DIR/shell/resyncIcon.sh"
@@ -42,3 +42,8 @@ grep -q '^description = ' project/web/Cargo.toml || sed -i '' "/^version = .*/a\
 for f in project/tauri/svelte.config.js src/svelte/svelte.config.js; do
   sed -i '' "1i\\\n// $PROJECT_NAME $PROJECT_VERSION $DESCRIPTION\n" \"$f\"
 done
+
+# tauriのprojectnaem変更
+sed -i '' "s/\"productName\": *\"[^\"]*\"/\"productName\": \"$PROJECT_NAME\"/" project/tauri/src-tauri/tauri.conf.json
+sed -i '' "s/\"identifier\": *\"[^\"]*\"/\"identifier\": \"com.taw.$PROJECT_NAME\"/" project/tauri/src-tauri/tauri.conf.json
+sed -i '' "s/\"title\": *\"[^\"]*\"/\"title\": \"$PROJECT_NAME\"/" project/tauri/src-tauri/tauri.conf.json
